@@ -1,0 +1,3 @@
+/Users/nitin/Code/c_exercises/cmake-build-debug/CMakeFiles/c_exercises.dir
+/Users/nitin/Code/c_exercises/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nitin/Code/c_exercises/cmake-build-debug/CMakeFiles/rebuild_cache.dir
