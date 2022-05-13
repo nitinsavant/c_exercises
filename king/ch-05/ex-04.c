@@ -9,5 +9,7 @@ int main(void) {
     scanf("%d", &j);
 
     printf("Result: %d\n", i < j ? -1 : i > j);
+
+    // Better solution: (i > j) - (i < j)
 }
 
