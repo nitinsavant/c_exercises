@@ -10,6 +10,8 @@ int main(void) {
     bool teenager = age < 13 ? false : age <= 19;
 
     printf("Teenager: %d\n", teenager);
+
+    // Simpler solution: teenager = age >= 13 && age <= 19
 }
 
 
