@@ -2,32 +2,35 @@
 #include <stdbool.h>
 
 int main(void) {
-    int m1, d1, y1, m2, d2, y2;
+    int earliestM, earliestD, earliestY = 0;
 
-    printf("Enter first date (mm/dd/yy): ");
-    scanf("%d/%d/%d", &m1, &d1, &y1);
-    printf("Enter second date (mm/dd/yy): ");
-    scanf("%d/%d/%d", &m2, &d2, &y2);
+    while (true) {
+        printf("Enter a date (mm/dd/yy): ");
 
-    bool isFirstEarliest = false;
+        int m, d, y;
+        scanf("%d/%d/%d", &m, &d, &y);
 
-    if (y1 < y2) {
-        isFirstEarliest = true;
-    } else if (y1 == y2) {
-        if (m1 < m2) {
-            isFirstEarliest = true;
-        } else if (m1 == m2) {
-            if (d1 < d2) {
-                isFirstEarliest = true;
-            }
+        if (y == 0 && m == 0 && d == 0)
+            break;
+
+        if (!earliestY) {
+            earliestY = y;
+            earliestM = m;
+            earliestD = d;
+            continue;
+        }
+
+        if ((y < earliestY) ||
+            (y == earliestY && m < earliestM) ||
+            (y == earliestY && m == earliestM && d < earliestD)) {
+
+            earliestY = y;
+            earliestM = m;
+            earliestD = d;
         }
     }
 
-    if (isFirstEarliest) {
-        printf("%d/%d/%.2d is earlier than %d/%d/%.2d\n", m1, d1, y1, m2, d2, y2);
-    } else {
-        printf("%d/%d/%.2d is earlier than %d/%d/%.2d\n", m2, d2, y2, m1, d1, y1);
-    }
+    printf("%d/%d/%.2d is the earliest date\n", earliestM, earliestD, earliestY);
 }
 
 
