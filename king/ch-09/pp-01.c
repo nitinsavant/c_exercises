@@ -2,7 +2,7 @@
 
 #define SIZE 6
 
-int find_largest_value(int a[], int n) {
+void move_max_to_end(int a[], int n) {
     int max_index = 0;
     for (int i = 1; i < n; i++) {
         if (a[i] > a[max_index]) {
@@ -10,8 +10,8 @@ int find_largest_value(int a[], int n) {
         }
     }
 
-    temp = a[n];
-    a[n] = a[max_index];
+    int temp = a[n - 1];
+    a[n - 1] = a[max_index];
     a[max_index] = temp;
 }
 
@@ -20,7 +20,7 @@ void selection_sort(int a[], int n) {
         return;
     }
 
-    find_largest_value(a, n);
+    move_max_to_end(a, n);
 
     selection_sort(a, n - 1);
 }
