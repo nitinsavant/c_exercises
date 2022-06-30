@@ -1,15 +1,16 @@
 #include <stdio.h>
+#include <stdbool.h.h>
 
-#define STACK_SIZE = 100;
+#define STACK_SIZE 100
 
 int contents[STACK_SIZE];
 int top = 0;
 
-void is_full(void) {
+bool is_full(void) {
     return top == STACK_SIZE;
 }
 
-void is_empty(void) {
+bool is_empty(void) {
     return top == 0;
 }
 
