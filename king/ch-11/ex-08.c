@@ -1,4 +1,4 @@
-void *find_largest(int a[], int n) {
+int *find_largest(int a[], int n) {
     int *largest = &a[0];
 
     for (int i = 1; i < n; i++) {

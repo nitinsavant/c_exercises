@@ -1,13 +1,16 @@
 #include <stdio.h>
 
-#define NUM_COLS 3
+#define NUM_COLS 2
 #define NUM_ROWS 2
 
 int main(void) {
-    int a[][NUM_COLS] = {{2, 3, 6}, {4, 5, 8}};
+    int a[] = {1, 2, 3, 4, 5};
+    int b[3];
 
-    int (*p)[NUM_COLS];
+    *b++ = 5;
+    *b++ = 6;
+    *b++ = 7;
 
-    for (p = a; p < a + NUM_ROWS; p++)
-        printf("%d\n", (*p)[1]);
+    for (int *p = b; p < b + 3; p++)
+        printf("%d ", *p);
 }
