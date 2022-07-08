@@ -1,9 +1,16 @@
 #include <stdio.h>
-#include <stdbool.h>
-#include <ctype.h>
 
-bool void remove_filename(char *url) {
+void remove_filename(char *url) {
+    char *p = url;
 
+    while (*url) {
+        if (*url == '/') {
+            p = url;
+        }
+        url++;
+    }
+
+    *p = '\0';
 }
 
 int main(void) {
